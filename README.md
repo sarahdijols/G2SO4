@@ -5,7 +5,7 @@
 
 3) The second branch "old strategy" stores all files corresponding to an approach whose results were not satisfying, as explained in Appendix B of our paper
 
-4) The word "matching" employed in the files' names refer to the process of matching the double coset representatives eta_i with Weyl group elements in the set W_b\W/W_b
+4) The word "matching" employed in the files' names refer to the process of matching the double coset representatives eta_i with Weyl group elements in the set W_b\W/W_b. The numbering of the double coset representatives (the expressions x_3, or x_5 for instance) follows from the brace at the end of Section 7.2 in our paper.  
 5) The process of verifying the admissibility, openess and closedness of the orbits for each representative is done in "
 admissibility_openess_closed"
 6) We initially tried to verify those conditions (admissibility, openess and closedness) using the corresponding "w" identified using the "matching". Some of the relevant codes can be found in "admissibility_with_w".
