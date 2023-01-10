@@ -8,6 +8,6 @@
 4) The word "matching" employed in the files' names refer to the process of matching the double coset representatives eta_i with Weyl group elements in the set W_b\W/W_b
 5) The process of verifying the admissibility, openess and closedness of the orbits for each representative is done in "
 admissibility_openess_closed"
-6) We tried to verify those conditions using the corresponding "w" identified using the "matching" in the file "admissibility_with_w"
+6) We initially tried to verify those conditions (admissibility, openess and closedness) using the corresponding "w" identified using the "matching". Some of the relevant codes can be found in "admissibility_with_w".
 7) The file "tau_p213" refer to some technical condition given in the paper of Offen that we have verified (see the paper "PARABOLICALLY INDUCED REPRESENTATIONS OF p-ADIC G2 DISTINGUISHED BY SO4 I")
 
