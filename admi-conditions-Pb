@@ -157,3 +157,591 @@ M= tor2*u_br*u_mbx
 print("\n")
 m2= u_br*tor2*u_mbx*n_b
 
+
+u_alin= matrix([[1, 0, -l, 0, 0, 0, 0, 0],\
+[l,1, -l^2 , -l, 0, 0, 0, 0],\
+[0, 0, 1 ,0 ,0 ,0 ,0, 0],\
+[0, 0, l, 1, 0, 0, 0, 0],\
+[0 ,0 ,0 ,0 ,1 ,0 ,0 ,0],\
+[0 ,0 ,0 ,0 ,l ,1 ,0 ,0],\
+[0 ,0 ,0 ,0 ,0, 0 ,1, 0],\
+[0 ,0 ,0 ,0 ,0 ,0 ,l, 1]])
+    
+u_abmi=matrix([[1, 0, 0, 0, 0, 0, 0, -m],\
+[0, 1, 0, 0 ,0 ,0 ,0, 0],\
+[0, 0, 1 ,0 ,0 ,0 ,-m, 0],\
+[0, 0, 0, 1, 0, 0, 0, m],\
+[m, 0, 0 ,-m ,1, 0 ,0 ,-m^2],\
+[0, -m, 0 ,0 , 0, 1 ,0 ,0],\
+[0, 0 ,0 ,0 ,0, 0 ,1, 0],\
+[0, 0, 0, 0, 0,0 ,0, 1]])
+
+u_2abni= matrix([[1, 0, 0, 0, 0, 0,n, 0],\
+[0, 1, 0, 0 ,0 ,0 ,0, -n],\
+[0, 0, 1 ,0 ,0,0 ,0, 0],\
+[0, 0, 0, 1, 0, 0, -n, 0],\
+[0 ,0 ,n ,0 ,1 ,0 ,0 ,0],\
+[n, 0 ,0 , -n ,0 ,1 ,n^2 ,0],\
+[0, 0, 0, 0, 0, 0, 1, 0],\
+[0 ,0 ,0 ,0 ,0 ,0 ,0, 1]])
+
+u_3abpi= matrix([[1, 0, 0, 0, 0, 0, 0, 0],\
+[0, 1, 0, 0 ,0 ,0 ,p, 0],\
+[0, 0, 1 ,0 ,0 ,0 ,0, 0],\
+[0, 0, 0, 1, 0, 0, 0, 0],\
+[0 ,0 ,0 ,0 ,1 ,0 ,0 ,0],\
+[0 ,0 ,p ,0 ,0 ,1 ,0 ,0],\
+[0 ,0,0 ,0 ,0,0 ,1, 0],\
+[0 ,0 ,0 ,0 ,0 ,0 ,0, 1]])
+
+u_3a2bqi= matrix([[1, 0, 0, 0, 0, 0, 0, 0],\
+[0, 1, 0, 0 ,0 ,0 ,0, 0],\
+[0, 0, 1 ,0 ,0 ,0 ,0, 0],\
+[0, 0, 0, 1, 0, 0, 0, 0],\
+[0 ,0 ,0 ,0 ,1 ,0 ,q ,0],\
+[0 ,0 ,0 ,0 ,0 ,1 ,0 ,q],\
+[0 ,0 ,0 ,0 ,0,0 ,1, 0],\
+[0 ,0 ,0 ,0 ,0 ,0 ,0, 1]])
+
+U_b= u_al*u_abm*u_2abn*u_3abr*u_3a2br
+print("\n")
+
+
+U_b= matrix([[1,0,l,0,0, 0,l*m - n, m],\
+[-l,1,-l^(2),l,0,0,-l^(2)*m + 2*l*n-p,-2*l*m+n],\
+[0,0,1,0,0,0,m,0],\
+[0,0,-l,1,0,0,-l*m + n,-m],\
+[-m,0,-n,m,1,0,2*m*n-q,-m^(2)],\
+[l*m-n,m,l*n-p,-l*m+n,-l,1, -2*l*m*n+n^(2)-m*p+l*q,l*m^(2)+m*n-q],\
+[0,0,0,0,0,0,1,0],\
+[0,0,0,0,0,0,-l,1]])
+
+#print(U_b)
+
+# eta elements 
+w_0 = n_a*n_b*n_a*n_b*n_a
+w_1 = n_b*n_a*n_b*n_a
+
+eta_1=tor2.subs(t=1,s=1) # this is the identity element
+print(eta_1)
+eta_2=n_a
+eta_3=n_a*u_a
+eta_4=n_a*n_b*n_a*u_3ab
+eta_5=n_a*n_b*n_a*u_a
+eta_6=n_a*n_b*n_a*u_3ab*u_a
+eta_7 = w_0*u_ab
+eta_8 = w_0*u_3a2b
+eta_9 = w_0*u_ab*u_3a2b 
+eta_10 = w_0*u_ab*u_3abr3
+eta_11 = w_0
+
+sage: var('a')
+sage: var('b')
+sage: var('c')
+sage: var('d')
+sage: var('u')
+sage: var('v')
+sage: var('w')
+sage: var('y')
+sage: var('z')
+sage: var('T')
+
+
+print("admissibility")
+print(t_0*m2*t_0)
+print("\n")
+print("m2")
+print(m2)
+print("\n")
+print(t_1*m2*t_1)
+print("\n")
+print(t_2*m2*t_2)
+print("\n")
+
+print("admissibility")
+print(t_0*M*t_0)
+print("\n")
+print("M")
+print(M)
+print("\n")
+print(t_1*M*t_1)
+print("\n")
+print(t_2*M*t_2)
+print("\n")
+
+
+
+print("conjugation by t_0, admissibility")
+
+x_1=eta_1*t_0*eta_1.inverse()*t_0 # of course, x_1 = eta_1 is the identity - this will let us "check" the later steps
+x_2=eta_2*t_0*eta_2.inverse()*t_0
+x_3=eta_3*t_0*eta_3.inverse()*t_0
+x_4=eta_4*t_0*eta_4.inverse()*t_0
+x_5=eta_5*t_0*eta_5.inverse()*t_0
+x_6=eta_6*t_0*eta_6.inverse()*t_0
+x_7=eta_7*t_0*eta_7.inverse()*t_0
+x_8=eta_8*t_0*eta_8.inverse()*t_0
+x_9=eta_9*t_0*eta_9.inverse()*t_0
+x_10=eta_10*t_0*eta_10.inverse()*t_0
+x_11=eta_11*t_0*eta_11.inverse()*t_0
+
+print(x_2)
+print("\n")
+print(x_3)
+print("\n")
+print(x_4)
+print("\n")
+print("x_5")
+print(x_5)     
+print("\n")
+print("x_6")
+print(x_6)
+print("\n")
+print(x_7)
+print("\n")
+print(x_8)
+print("\n")
+print(x_9)
+print("\n")
+print(x_10)
+print("\n")
+print(x_11)
+
+#checking admissibility with t_0
+print(x_2*t_0*m2)
+print("\n")
+print(m2*x_2*t_0)
+print("\n")
+print("x_3")
+print(x_3*t_0*m2)
+print("\n")
+print(m2*x_3*t_0)
+print("\n")
+print("x_4")
+print(x_4*t_0*m2)
+print("\n")
+print(m2*x_4*t_0)
+print("\n")
+print("x_5")
+print(x_5*t_0*m2)
+print("\n")
+print(m2*x_5*t_0)
+print("\n")
+print("x_6")
+print(x_6*t_0*m2)
+print("\n")
+print(m2*x_6*t_0)
+print("\n")
+print("x_7")
+print(x_7*t_0*m2)
+print("\n")
+print(m2*x_7*t_0)
+print("\n")
+print("x_8")
+print(x_8*t_1*m2)
+print("\n")
+print(m2*x_8*t_0)
+print("\n")
+print("x_9")
+print(x_9*t_0*m2)
+print("\n")
+print(m2*x_9*t_0)
+print("\n")
+print("x_10")
+print(x_10*t_0*m2)
+print("\n")
+print(m2*x_10*t_0)
+print("\n")
+print(x_11*t_0*m2)
+print("\n")
+print(m2*x_11*t_0)
+
+print(x_2*t_0*M)
+print("\n")
+print(M*x_2*t_0)
+print("\n")
+print("x_3")
+print(x_3*t_0*M)
+print("\n")
+print(M*x_3*t_0)
+print("\n")
+print("x_4")
+print(x_4*t_0*M)
+print("\n")
+print(M*x_4*t_0)
+print("\n")
+print("x_5")
+print(x_5*t_0*M)
+print("\n")
+print(M*x_5*t_0)
+print("\n")
+print("x_6")
+print(x_6*t_0*M)
+print("\n")
+print(M*x_6*t_0)
+print("\n")
+print("x_7")
+print(x_7*t_0*M)
+print("\n")
+print(M*x_7*t_0)
+print("\n")
+print("x_8")
+print(x_8*t_0*M)
+print("\n")
+print(M*x_8*t_0)
+print("\n")
+print("x_9")
+print(x_9*t_0*M)
+print("\n")
+print(M*x_9*t_0)
+print("\n")
+print("x_10")
+print(x_10*t_0*M)
+print("\n")
+print(M*x_10*t_0)
+print("\n")
+print(x_11*t_0*M)
+print("\n")
+print(M*x_11*t_0)
+
+#now with t_1
+
+x_1=eta_1*t_1*eta_1.inverse()*t_1 # of course, x_1 = eta_1 is the identity - this will let us "check" the later steps
+x_2=eta_2*t_1*eta_2.inverse()*t_1
+x_3=eta_3*t_1*eta_3.inverse()*t_1
+x_4=eta_4*t_1*eta_4.inverse()*t_1
+x_5=eta_5*t_1*eta_5.inverse()*t_1
+x_6=eta_6*t_1*eta_6.inverse()*t_1
+x_7=eta_7*t_1*eta_7.inverse()*t_1
+x_8=eta_8*t_1*eta_8.inverse()*t_1
+x_9=eta_9*t_1*eta_9.inverse()*t_1
+x_10=eta_10*t_1*eta_10.inverse()*t_1
+x_11=eta_11*t_1*eta_11.inverse()*t_1
+
+
+print(x_2)
+print("\n")
+print(x_3)
+print("\n")
+print(x_4)
+print("\n")
+print("x_5")
+print(x_5)     
+print("\n")
+print("x_6")
+print(x_6)
+print("\n")
+print(x_7)
+print("\n")
+print(x_8)
+print("\n")
+print(x_9)
+print("\n")
+print(x_10)
+print("\n")
+print(x_11)
+
+print(x_2*t_1*m2)
+print("\n")
+print(m2*x_2*t_1)
+print("\n")
+print("x_3")
+print(x_3*t_1*m2)
+print("\n")
+print(m2*x_3*t_1)
+print("\n")
+print("x_4")
+print(x_4*t_1*m2)
+print("\n")
+print(m2*x_4*t_1)
+print("\n")
+print("x_5")
+print(x_5*t_1*m2)
+print("\n")
+print(m2*x_5*t_1)
+print("\n")
+print("x_6")
+print(x_6*t_1*m2)
+print("\n")
+print(m2*x_6*t_1)
+print("\n")
+print("x_7")
+print(x_7*t_1*m2)
+print("\n")
+print(m2*x_7*t_1)
+print("\n")
+print("x_8")
+print(x_8*t_1*m2)
+print("\n")
+print(m2*x_8*t_1)
+print("\n")
+print("x_9")
+print(x_9*t_1*m2)
+print("\n")
+print(m2*x_9*t_1)
+print("\n")
+print("x_10")
+print(x_10*t_1*m2)
+print("\n")
+print(m2*x_10*t_1)
+print("\n")
+print(x_11*t_1*m2)
+print("\n")
+print(m2*x_11*t_1)
+
+print(x_2*t_1*M)
+print("\n")
+print(M*x_2*t_1)
+print("\n")
+print("x_3")
+print(x_3*t_1*M)
+print("\n")
+print(M*x_3*t_1)
+print("\n")
+print("x_4")
+print(x_4*t_1*M)
+print("\n")
+print(M*x_4*t_1)
+print("\n")
+print("x_5")
+print(x_5*t_1*M)
+print("\n")
+print(M*x_5*t_1)
+print("\n")
+print("x_6")
+print(x_6*t_1*M)
+print("\n")
+print(M*x_6*t_1)
+print("\n")
+print("x_7")
+print(x_7*t_1*M)
+print("\n")
+print(M*x_7*t_1)
+print("\n")
+print("x_8")
+print(x_8*t_1*M)
+print("\n")
+print(M*x_8*t_1)
+print("\n")
+print("x_9")
+print(x_9*t_1*M)
+print("\n")
+print(M*x_9*t_1)
+print("\n")
+print("x_10")
+print(x_10*t_1*M)
+print("\n")
+print(M*x_10*t_1)
+print("\n")
+print(x_11*t_1*M)
+print("\n")
+print(M*x_11*t_1)
+
+#now with t_2
+x_1=eta_1*t_2*eta_1.inverse()*t_2 # of course, x_1 = eta_1 is the identity - this will let us "check" the later steps
+x_2=eta_2*t_2*eta_2.inverse()*t_2
+x_3=eta_3*t_2*eta_3.inverse()*t_2
+x_4=eta_4*t_2*eta_4.inverse()*t_2
+x_5=eta_5*t_2*eta_5.inverse()*t_2
+x_6=eta_6*t_2*eta_6.inverse()*t_2
+x_7=eta_7*t_2*eta_7.inverse()*t_2
+x_8=eta_8*t_2*eta_8.inverse()*t_2
+x_9=eta_9*t_2*eta_9.inverse()*t_2
+x_10=eta_10*t_2*eta_10.inverse()*t_2
+x_11=eta_11*t_2*eta_11.inverse()*t_2
+
+print(x_2)
+print("\n")
+print(x_3)
+print("\n")
+print(x_4)
+print("\n")
+print("x_5")
+print(x_5)     
+print("\n")
+print("x_6")
+print(x_6)
+print("\n")
+print(x_7)
+print("\n")
+print(x_8)
+print("\n")
+print(x_9)
+print("\n")
+print(x_10)
+print("\n")
+print(x_11)
+
+x_1=eta1*t_2*eta1.inverse()*t_2 # of course, x_1 = eta_1 is the identity - this will let us "check" the later steps
+x_2=eta2*t_2*eta2.inverse()*t_2
+x_3=eta3*t_2*eta3.inverse()*t_2
+x_4=eta4*t_2*eta4.inverse()*t_2
+x_5=eta5*t_2*eta5.inverse()*t_2
+x_6=eta6*t_2*eta6.inverse()*t_2
+x_7=eta7*t_2*eta7.inverse()*t_2
+x_8=eta8*t_2*eta8.inverse()*t_2
+x_9=eta9*t_2*eta9.inverse()*t_2
+x_10=eta10*t_2*eta10.inverse()*t_2
+x_11=eta11*t_2*eta11.inverse()*t_2
+
+
+print(m2)
+print("\n")
+print(t_2*m2*t_2)
+print("\n")
+print(M)
+print("\n")
+print(t_2*M*t_2)
+print("\n")
+
+
+print(x_2*t_2*m2)
+print("\n")
+print(m2*x_2*t_2)
+print("\n")
+print("x_3")
+print(x_3*t_2*m2)
+print("\n")
+print(m2*x_3*t_2)
+print("\n")
+print("x_4")
+print(x_4*t_2*m2)
+print("\n")
+print(m2*x_4*t_2)
+print("\n")
+print("x_5")
+print(x_5*t_2*m2)
+print("\n")
+print(m2*x_5*t_2)
+print("\n")
+print("x_6")
+print(x_6*t_2*m2)
+print("\n")
+print(m2*x_6*t_2)
+print("\n")
+print("x_7")
+print(x_7*t_2*m2)
+print("\n")
+print(m2*x_7*t_2)
+print("\n")
+print("x_8")
+print(x_8*t_2*m2)
+print("\n")
+print(m2*x_8*t_2)
+print("\n")
+print("x_9")
+print(x_9*t_2*m2)
+print("\n")
+print(m2*x_9*t_2)
+print("\n")
+print("x_10")
+print(x_10*t_2*m2)
+print("\n")
+print(m2*x_10*t_2)
+print("\n")
+print(x_11*t_2*m2)
+print("\n")
+print(m2*x_11*t_2)
+
+
+print(x_2*M)
+print("\n")
+print(M*x_2)
+print("\n")
+print("x_3")
+print(x_3*M)
+print("\n")
+print(M*x_3)
+print("\n")
+print("x_4")
+print(x_4*M)
+print("\n")
+print(M*x_4)
+print("\n")
+print("x_5")
+print(x_5*M)
+print("\n")
+print(M*x_5)
+print("\n")
+print("x_6")
+print(x_6*M)
+print("\n")
+print(M*x_6)
+print("\n")
+print("x_7")
+print(x_7*M)
+print("\n")
+print(M*x_7)
+print("\n")
+print("x_8")
+print(x_8*M)
+print("\n")
+print(M*x_8)
+print("\n")
+print("x_9")
+print(x_9*M)
+print("\n")
+print(M*x_9)
+print("\n")
+print("x_10")
+print(x_10*M)
+print("\n")
+print(M*x_10)
+print("\n")
+print(x_11*M)
+print("\n")
+print(M*x_11)
+
+#openess and closeness conditions
+
+# for the element x_2
+print(x_2*t_0*M)
+print("\n")
+print(M*x_2*t_0)
+print("\n")
+
+P_b = M*U_b
+
+print(x_2*t_0*P_b)
+print("\n")
+print(P_b*x_2*t_0)
+
+print(x_2*t_0*m2)
+print("\n")
+print(m2*x_2*t_0)
+print("\n")
+
+P_b = m2*U_b
+
+print(x_2*t_0*P_b)
+print("\n")
+print(P_b*x_2*t_0)
+
+# for the element x_3
+print(x_3*t_0*M)
+print("\n")
+print(M*x_3*t_0)
+print("\n")
+
+P_b = M*U_b
+
+print(x_3*t_0*P_b)
+print("\n")
+print(P_b*x_3*t_0)
+
+# etc
+# open orbit 
+
+print(x_10*t_2*m2)
+print("\n")
+print(m2*x_10*t_2)
+print("\n")
+
+P_b = m2*U_b
+
+print(x_10*t_2*P_b)
+print("\n")
+print(P_b*x_10*t_2)
+
+
+
