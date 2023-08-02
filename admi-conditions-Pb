@@ -218,7 +218,7 @@ U_b= matrix([[1,0,l,0,0, 0,l*m - n, m],\
 
 #print(U_b)
 
-# eta elements 
+# eta elements, double coset representatives P_b\G_2/SO_4
 w_0 = n_a*n_b*n_a*n_b*n_a
 w_1 = n_b*n_a*n_b*n_a
 
@@ -269,10 +269,7 @@ print("\n")
 print(t_2*M*t_2)
 print("\n")
 
-
-
-print("conjugation by t_0, admissibility")
-
+#defining the x_i's with t_0
 x_1=eta_1*t_0*eta_1.inverse()*t_0 # of course, x_1 = eta_1 is the identity - this will let us "check" the later steps
 x_2=eta_2*t_0*eta_2.inverse()*t_0
 x_3=eta_3*t_0*eta_3.inverse()*t_0
@@ -285,6 +282,7 @@ x_9=eta_9*t_0*eta_9.inverse()*t_0
 x_10=eta_10*t_0*eta_10.inverse()*t_0
 x_11=eta_11*t_0*eta_11.inverse()*t_0
 
+#checking what they look like
 print(x_2)
 print("\n")
 print(x_3)
@@ -404,7 +402,7 @@ print(x_11*t_0*M)
 print("\n")
 print(M*x_11*t_0)
 
-#now with t_1
+#Now with t_1
 
 x_1=eta_1*t_1*eta_1.inverse()*t_1 # of course, x_1 = eta_1 is the identity - this will let us "check" the later steps
 x_2=eta_2*t_1*eta_2.inverse()*t_1
@@ -537,7 +535,7 @@ print(x_11*t_1*M)
 print("\n")
 print(M*x_11*t_1)
 
-#now with t_2
+#Now with t_2
 x_1=eta_1*t_2*eta_1.inverse()*t_2 # of course, x_1 = eta_1 is the identity - this will let us "check" the later steps
 x_2=eta_2*t_2*eta_2.inverse()*t_2
 x_3=eta_3*t_2*eta_3.inverse()*t_2
